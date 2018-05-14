@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Trip Sheet</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <style media="screen">
+      .disp{
+        font-size: 40px;
+        font-family: Arial;
+        color:green;
+      }
+      ::text {
+          color: blue;
+      }
+      .btn_save{
+        padding: 15px 120px;
+        width:20%;
+      }
+      table{
+        font-size: 20px;
+        font-family: arial;
+        width:60%;
+      }
+      select{
+        width: 100%;
+      }
+      input{
+        border: 1px solid #c9e6ff;
+        width: 100%;
+        box-shadow: solid blue;
+      }
+      .adjust{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .show{
+        color:blue;
+      }
+      body{
+        bgcolor: #B22222;
+      }
+    </style>
+  </head>
+  <body bgcolor="#B22222">
+    <div class="container navbar-fixed-top" style="background-color:#E7E7E7;height:212px">
+      <div class="row">
+        <div class="col-lg-3 col-xs-3 thumbnail"><img src="https://5.imimg.com/data5/MM/PT/MY-14545609/taxi-cab-500x500.jpg"width="295"heigth="300" alt="Sorry pic Not Found"></div>
+        <div class="col-lg-6 col-xs-3 thumbnail" align="center">
+
+            <h1 style="font-size: 40px;font-family: Arial;color:green"><b>Taj Tours & Travels</b></h1>
+            <p class="show">D.no. 50.92.20,Santhipuram,Near Crown Bakery,</p>
+            <p class="show">Sankarmatam Road, Visakhapatnam-530016. Ph.(R)2746110</p>
+            <p class="show">Mob. 9848399753,9505686786,9391155570</p>
+            <p class="show">E-mail : tajtravels.ttt@gmail.com</p>
+        </div>
+        <div class="col-lg-3 col-xs-3 thumbnail">  <img src="https://orig00.deviantart.net/9b41/f/2012/104/f/6/ttt_logo_by_nxgarts-d4w4n2g.png" width="268"heigth="300"alt="Sorry Logo Not Found" align="right"></div>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container" align="center">
+      <div class="jumbotron">
+      <form class="form-group" name="myForm" id="myForm">
+      <table>
+        <tr>
+          <td><label>Date :</label></td>
+          <td><input type="datetime-local" id="datetoday" name="" style="color:blue" value="" placeholder="Enter Date"></td>
+        </tr>
+        <tr>
+          <td><label>TS :</label></td>
+          <td>
+            <input type="text" style="color:blue" name="" value="" id="ts" placeholder="Enter TS">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Company :</label></td>
+          <td><input type="text" id="company_name" style="color:blue" name="" value="" placeholder="Enter Company name"></td>
+        </tr>
+        <tr>
+          <td><label>Customer :</label></td>
+          <td>
+            <input type="text" name="" value="" id="customer_name" style="color:blue" placeholder="Enter Customer Name">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Customer Ph_No :</label></td>
+          <td>
+            <input type="text" name="" value="" id="cust_mobile" style="color:blue" placeholder="Enter Customer Mobile Number">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Tour Details :</label></td>
+          <td>
+            <input type="text" name="" style="color:blue" value="" id="tour_details" placeholder="Enter Tour Details">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Vechile Number :</label></td>
+          <td>
+            <input type="text" id="vechile_num" style="color:blue" name="" value="" placeholder="Enter Vechile Number">
+            <!--select id="vechile_num" style="color:blue">
+                <option value="default">Select Vechile</option>
+            </select-->
+          </td>
+        </tr>
+        <tr>
+          <td><label>Driver :</label></td>
+          <td>
+            <input type="text" name="" id="driver_name" value="" style="color:blue" placeholder="Enter Driver Name">
+            <!--select id="driver_name" style="color:blue">
+                <option value="default">Select Driver</option>
+            </select-->
+          </td>
+        </tr>
+        <tr>
+          <td><label>In Kms :</label></td>
+          <td>
+            <input type="text" id="in_kms" style="color:blue" name="" value=""placeholder="Enter In Kms">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Out Kms :</label></td>
+          <td>
+            <input type="text" name="" style="color:blue" id="out_kms" value="" placeholder="Enter Out Kms">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Total Kms :</label></td>
+          <td>
+            <input type="text" style="color:blue" id="tot_kms" name="" value="" placeholder="Enter total kms">
+          </td>
+        </tr>
+        <tr>
+          <td><label>In Time :</label></td>
+          <td>
+            <input type="text" name="" style="color:blue" id="in_time" value="" placeholder="Enter In Time">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Total Hours :</label></td>
+          <td>
+            <input type="text" style="color:blue" id="tot_hrs" name="" value="" placeholder="Enter Total Hours">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Adv :</label></td>
+          <td>
+            <input type="text" style="color:blue" name="" id="adv" value="" placeholder="Enter Advance">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Total Amount :</label></td>
+          <td>
+            <input type="text" name="" style="color:blue" value="" id="tot_amt" placeholder="Enter Total Amount">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Balance :</label></td>
+          <td>
+            <input type="text" id="bal" style="color:blue" name="" value="" placeholder="Enter balance">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Status :</label></td>
+          <td>
+            <input type="text" name=""id="status" style="color:blue" value="" placeholder="Enter Status">
+          </td>
+        </tr>
+        <tr>
+          <td><label>Remarks :</label></td>
+          <td>
+            <input type="text" name="" value="" style="color:blue" id="remarks"placeholder="Enter Remarks">
+          </td>
+        </tr>
+      </table>
+    </form>
+      <input type="submit" name="button" value="Save" class="btn btn-success btn-lg btn_save" id="send_Values">
+      <button type="button" name="button" onclick="myReset()" class="btn btn-success btn-lg btn_save">Reset</button>
+        <!--input type="reset" class="btn btn-success btn-lg btn_save" name="reset" value="Reset"-->
+    </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script type="text/javascript">
+  function myReset() {
+    document.getElementById("myForm").reset();
+}
+  $("#send_Values").click(function(){
+    var date_today = $("#datetoday").val();
+    var ts = $("#ts").val();
+    var company = $("#company_name").val();
+    //console.log("000",ts,company);
+    var customer = $("#customer_name").val();
+    var cust_mobile = $("#cust_mobile").val();
+    var tour_details = $("#tour_details").val();
+    var vechile_num = $("#vechile_num").val();
+    var driver_name = $("#driver_name").val();
+    var in_kms = $("#in_kms").val();
+    var out_kms = $("#out_kms").val();
+    var tot_kms = $("#tot_kms").val();
+    var in_time = $("#in_time").val();
+    var total_hrs = $("#tot_hrs").val();
+    var adv = $("#adv").val();
+    var tot_amt = $("#tot_amt").val();
+    var bal = $("#bal").val();
+    var status = $("#status").val();
+    var remarks = $("#remarks").val();
+
+    details = {'date_today':date_today,'ts':ts,'company':company,'cust_name':customer,'cust_mob_no':cust_mobile,'tour_details':tour_details,
+                'vechile_no':vechile_num,'driver':driver_name,'in_km':in_kms,'out_km':out_kms,'total_km':tot_kms,
+                'in_time':in_time,'total_hrs':total_hrs,'adv':adv,'total_amt':tot_amt,'bal':bal,'status':status,'remarks':remarks}
+
+    //console.log(details);
+    //Validations Start
+      if(date_today==""){
+        alert("Please Select Date and time!");
+        return false;
+      }
+      else if (date_today=="dd-mm-yyyy --:-- --") {
+        alert("Please Select Date and time!")
+        return false;
+      }
+      if(ts==""){
+        alert("Trip Sheet Cant be empty !");
+        return false;
+      }
+      if(company==""){
+        alert("Company cant be empty !");
+        return false;
+      }
+      if(customer==""){
+        alert("Custmer name cant be empty !");
+        return false;
+      }
+      if(cust_mobile==""){
+        alert("Mobile cant be empty !");
+        return false;
+      }
+      else if(cust_mobile.length!=10){
+        alert("Mobile number must be 10 digits !");
+        return false;
+      }
+      if(tour_details==""){
+          alert("Tour Details cant be empty !");
+          return false;
+      }
+      if(vechile_num==""){
+        alert("Please select vechile no !");
+        return false;
+      }
+      if(driver_name==""){
+          alert("Please select driver !");
+          return false;
+      }
+      if(in_kms==""){
+        alert("Please enter In kms !");
+        return false;
+      }
+      if(out_kms==""){
+        alert("Please enter Out Kms !");
+        return false;
+      }
+      if(tot_kms==""){
+        alert("Please enter total Kms !");
+        return false;
+      }
+      if(in_time==""){
+          alert("Please enter in time !");
+          return false;
+      }
+      if(total_hrs==""){
+        alert("Please enter total Hrs !");
+        return false;
+      }
+      if(adv==""){
+        alert("Please enter adv amount !");
+        return false;
+      }
+      if(tot_amt==""){
+        alert("Please enter total amount !");
+        return false;
+      }
+      if(bal==""){
+        alert("Please enter total amount !");
+        return false;
+      }
+    //total_hrs,adv,tot_amt,bal,status,remarks
+    //End of Validations
+    $.get('../getValues',details,function(data,status){
+    alert(data);
+  });
+});
+
+/*$( document ).ready(function() {
+  $.get('../getdriverNames',function(data,status){
+    var obj = $.parseJSON(data);//JSON.parse(data);
+    for(key in obj) {
+      $('#driver_name').append("<option value="+obj[key]+">"+obj[key]+"</option>");
+    }
+    });
+
+    $.get('../getCars',function(data,status){
+      //alert(typeof(data));
+      var obj = $.parseJSON(data);//JSON.parse(data);
+      //alert(obj['1']);
+      for(key in obj) {
+        //console.log(obj[key]);
+        $('#vechile_num').append("<option value="+obj[key]+">"+obj[key]+"</option>");
+      }
+      });
+});*/
+</script>
+</html>
